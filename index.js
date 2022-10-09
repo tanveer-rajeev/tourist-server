@@ -21,7 +21,7 @@ app.use("/users",userRouter);
 //   .then((res) => console.log("Connection successfully"))
 //   .catch((err) => console.log(err));
 
-const CONNECTION_URL = process.env.MONGOURI;
+const CONNECTION_URL = process.env.MONGO_URI;
 const PORT = process.env.PORT || 5000;
 
 mongoose
