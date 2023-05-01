@@ -20,21 +20,18 @@ app.use("/users",userRouter);
 //   .connect("mongodb://localhost/memories")
 //   .then((res) => console.log("Connection successfully"))
 //   .catch((err) => console.log(err));
+// , { useNewUrlParser: true, useUnifiedTopology: true }
 
 const CONNECTION_URL = process.env.MONGO_URI;
 const PORT = process.env.PORT || 5000;
 
 mongoose
-  .connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(CONNECTION_URL)
   .then(() =>
     app.listen(PORT, () => console.log(`Server running on port: ${PORT}`))
   )
   .catch((err) => console.log(err.message));
 
-
-// app.listen(PORT, () => {
-//   console.log(`Server listening on port ${PORT}`);
-// });
 
 
 
