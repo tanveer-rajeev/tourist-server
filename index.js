@@ -23,7 +23,11 @@ app.use("/users",userRouter);
 // , { useNewUrlParser: true, useUnifiedTopology: true }
 
 const CONNECTION_URL = process.env.MONGO_URI;
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
+
+app.get("/", async (req, res) => {
+    res.send("server is running on port 8000 with protfolio");
+  });
 
 mongoose
   .connect(CONNECTION_URL)
@@ -32,7 +36,7 @@ mongoose
   )
   .catch((err) => console.log(err.message));
 
-
+  
 
 
 
